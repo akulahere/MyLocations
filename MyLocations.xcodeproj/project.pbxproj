@@ -14,6 +14,7 @@
 		94A59DF32872D88100B30892 /* MyLocations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94A59DF12872D88100B30892 /* MyLocations.xcdatamodeld */; };
 		94A59DF52872D88400B30892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A59DF42872D88400B30892 /* Assets.xcassets */; };
 		94A59DF82872D88400B30892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94A59DF62872D88400B30892 /* LaunchScreen.storyboard */; };
+		94A59E00287582C500B30892 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A59DFF287582C500B30892 /* LocationDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		94A59DF42872D88400B30892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94A59DF72872D88400B30892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94A59DF92872D88400B30892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94A59DFF287582C500B30892 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				94A59DF62872D88400B30892 /* LaunchScreen.storyboard */,
 				94A59DF92872D88400B30892 /* Info.plist */,
 				94A59DF12872D88100B30892 /* MyLocations.xcdatamodeld */,
+				94A59DFF287582C500B30892 /* LocationDetailsViewController.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				94A59DE92872D88100B30892 /* AppDelegate.swift in Sources */,
 				94A59DF32872D88100B30892 /* MyLocations.xcdatamodeld in Sources */,
 				94A59DEB2872D88100B30892 /* SceneDelegate.swift in Sources */,
+				94A59E00287582C500B30892 /* LocationDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
