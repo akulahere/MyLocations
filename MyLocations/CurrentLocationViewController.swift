@@ -259,5 +259,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
       controller.placemark = placemark
     }
   }
+  
+  // MARK: -
 }
 
