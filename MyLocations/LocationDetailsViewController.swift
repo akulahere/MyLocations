@@ -5,9 +5,9 @@
 //  Created by Dmytro Akulinin on 06.07.2022.
 //
 
-import UIKit
-import CoreLocation
 import CoreData
+import CoreLocation
+import UIKit
 
 private let dateFormatter: DateFormatter = {
   let formatter = DateFormatter()
@@ -30,10 +30,28 @@ class LocationDetailsViewController: UITableViewController {
   var managedObjectContext: NSManagedObjectContext!
   var date = Date()
   
+  var locationToEdit: Location? {
+    didSet {
+      if let location = locationToEdit {
+        descriptionText = location.locationDescription
+        categoryName = location.category
+        date = location.date
+        coordinate = CLLocationCoordinate2DMake(
+          location.latitude,
+          location.longitude)
+        placemark = location.placemark
+      }
+    }
+  }
+
+  var descriptionText = ""
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    descriptionTextView.text = ""
+    if let location = locationToEdit {
+      title = "Edit Location"
+    }
+    descriptionTextView.text = descriptionText
     categoryLabel.text = categoryName
     
     latitudeLabel.text = String(
@@ -56,15 +74,23 @@ class LocationDetailsViewController: UITableViewController {
     tableView.addGestureRecognizer(gestureRecognizer)
   }
   
-  
   // MARK: - Actions
+
   @IBAction func done() {
     guard let mainView = navigationController?.parent?.view
     else { return }
     let hudView = HudView.hud(inView: mainView, animated: true)
     hudView.text = "Tagged"
     
-    let location = Location(context: managedObjectContext)
+    let location: Location
+    if let temp = locationToEdit {
+      hudView.text = "Updated"
+      location = temp
+    } else {
+      hudView.text = "Tagged"
+      location = Location(context: managedObjectContext)
+    }
+    
     location.locationDescription = descriptionTextView.text
     location.category = categoryName
     location.latitude = coordinate.latitude
@@ -94,6 +120,7 @@ class LocationDetailsViewController: UITableViewController {
   }
   
   // MARK: - Helper Methods
+
   func string(from placemark: CLPlacemark) -> String {
     var text = ""
     if let tmp = placemark.subThoroughfare {
@@ -128,13 +155,12 @@ class LocationDetailsViewController: UITableViewController {
     let indexPath = tableView.indexPathForRow(at: point)
     
     if let indexPath = indexPath {
-      if indexPath.section != 0 && indexPath.row != 0 {
+      if indexPath.section != 0, indexPath.row != 0 {
         descriptionTextView.resignFirstResponder()
       }
     } else {
       descriptionTextView.resignFirstResponder()
     }
-
   }
   
   // MARK: - Navigation
@@ -157,11 +183,8 @@ class LocationDetailsViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if indexPath.section == 0 && indexPath.row == 0 {
+    if indexPath.section == 0, indexPath.row == 0 {
       descriptionTextView.becomeFirstResponder()
     }
   }
-  
-  
 }
-

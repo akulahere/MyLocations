@@ -392,6 +392,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="0Pv-Q1-Xnm" kind="relationship" relationship="viewControllers" id="yfZ-Cu-YuR"/>
+                        <segue destination="MdD-kt-ZhL" kind="relationship" relationship="viewControllers" id="Uhw-Mf-rcw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cm8-NY-unH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -417,7 +418,84 @@
             </objects>
             <point key="canvasLocation" x="1005.7971014492755" y="120.53571428571428"/>
         </scene>
+        <!--Locations-->
+        <scene sceneID="Gs6-BV-fhl">
+            <objects>
+                <tableViewController id="NWL-rS-s17" customClass="LocationsViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="KS5-hc-hS9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="65" id="fRU-7a-ghz" customClass="LocationCell" customModule="MyLocations" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fRU-7a-ghz" id="Ji3-pD-Zbe">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bd0-1c-MHh">
+                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBw-fd-L4b">
+                                            <rect key="frame" x="20" y="37" width="374" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.49686548094086297" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BBw-fd-L4b" firstAttribute="top" secondItem="bd0-1c-MHh" secondAttribute="bottom" constant="5" id="3Ht-jN-29t"/>
+                                        <constraint firstItem="BBw-fd-L4b" firstAttribute="bottom" secondItem="Ji3-pD-Zbe" secondAttribute="bottomMargin" id="4y9-Qa-ZXf"/>
+                                        <constraint firstItem="bd0-1c-MHh" firstAttribute="leading" secondItem="Ji3-pD-Zbe" secondAttribute="leadingMargin" id="Ceu-LX-sv8"/>
+                                        <constraint firstItem="bd0-1c-MHh" firstAttribute="trailing" secondItem="Ji3-pD-Zbe" secondAttribute="trailingMargin" id="OS5-wb-Pm2"/>
+                                        <constraint firstItem="BBw-fd-L4b" firstAttribute="leading" secondItem="Ji3-pD-Zbe" secondAttribute="leadingMargin" id="nl8-PV-Unh"/>
+                                        <constraint firstItem="BBw-fd-L4b" firstAttribute="trailing" secondItem="Ji3-pD-Zbe" secondAttribute="trailingMargin" id="ov5-70-JCr"/>
+                                        <constraint firstItem="bd0-1c-MHh" firstAttribute="top" secondItem="Ji3-pD-Zbe" secondAttribute="topMargin" id="yxe-8d-lbU"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="BBw-fd-L4b" id="ivg-4n-YCF"/>
+                                    <outlet property="descriptionLabel" destination="bd0-1c-MHh" id="1KA-Iu-q38"/>
+                                    <segue destination="7Fj-Rv-t9A" kind="show" identifier="EditLocation" id="0f1-iS-zVP"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NWL-rS-s17" id="oyo-bm-pF3"/>
+                            <outlet property="delegate" destination="NWL-rS-s17" id="gpc-ca-qZR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Locations" id="5NF-Yd-L9F" userLabel="Locations"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zDX-n6-tyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1915.9420289855075" y="829.6875"/>
+        </scene>
+        <!--Locations-->
+        <scene sceneID="A8c-jY-eyN">
+            <objects>
+                <navigationController id="MdD-kt-ZhL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Locations" id="egP-fO-cZl" userLabel="Locations"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s03-cH-w7p">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NWL-rS-s17" kind="relationship" relationship="rootViewController" id="zoG-tr-cC7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GQN-O7-mfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="830"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0f1-iS-zVP"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
