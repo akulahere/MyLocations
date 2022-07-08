@@ -15,6 +15,7 @@
 		9498D3BC287715640073AFE1 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9498D3BB287715640073AFE1 /* LocationsViewController.swift */; };
 		9498D3BE287726830073AFE1 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9498D3BD287726830073AFE1 /* LocationCell.swift */; };
 		94A5300C28783351003122E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5300B28783351003122E9 /* MapViewController.swift */; };
+		94A5300F287849A4003122E9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 94A5300E287849A4003122E9 /* .swiftlint.yml */; };
 		94A59DE92872D88100B30892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A59DE82872D88100B30892 /* AppDelegate.swift */; };
 		94A59DEB2872D88100B30892 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A59DEA2872D88100B30892 /* SceneDelegate.swift */; };
 		94A59DED2872D88100B30892 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A59DEC2872D88100B30892 /* CurrentLocationViewController.swift */; };
@@ -34,6 +35,7 @@
 		9498D3BB287715640073AFE1 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		9498D3BD287726830073AFE1 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		94A5300B28783351003122E9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		94A5300E287849A4003122E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		94A59DE52872D88100B30892 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A59DE82872D88100B30892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94A59DEA2872D88100B30892 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				94A59DF12872D88100B30892 /* MyLocations.xcdatamodeld */,
 				94A59DEA2872D88100B30892 /* SceneDelegate.swift */,
 				94A5300B28783351003122E9 /* MapViewController.swift */,
+				94A5300E287849A4003122E9 /* .swiftlint.yml */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -107,6 +110,7 @@
 				94A59DE12872D88100B30892 /* Sources */,
 				94A59DE22872D88100B30892 /* Frameworks */,
 				94A59DE32872D88100B30892 /* Resources */,
+				94A5300D287847CB003122E9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -155,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A5300F287849A4003122E9 /* .swiftlint.yml in Resources */,
 				94A59DF82872D88400B30892 /* LaunchScreen.storyboard in Resources */,
 				94A59DF52872D88400B30892 /* Assets.xcassets in Resources */,
 				94A59DF02872D88100B30892 /* Main.storyboard in Resources */,
@@ -162,6 +167,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		94A5300D287847CB003122E9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse \n    echo \"Warning, swiftlint not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		94A59DE12872D88100B30892 /* Sources */ = {
