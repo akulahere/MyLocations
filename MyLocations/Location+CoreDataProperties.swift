@@ -6,21 +6,24 @@
 //
 //
 
+import Foundation
 import CoreData
 import CoreLocation
-import Foundation
 
-public extension Location {
-  @nonobjc class func fetchRequest() -> NSFetchRequest<Location> {
+extension Location {
+  @nonobjc public class func fetchRequest() -> NSFetchRequest<Location> {
     return NSFetchRequest<Location>(entityName: "Location")
   }
-
-  @NSManaged var latitude: Double
-  @NSManaged var longitude: Double
-  @NSManaged var date: Date
-  @NSManaged var locationDescription: String
-  @NSManaged var category: String
-  @NSManaged var placemark: CLPlacemark?
+  
+  @NSManaged public var latitude: Double
+  @NSManaged public var longitude: Double
+  @NSManaged public var date: Date
+  @NSManaged public var locationDescription: String
+  @NSManaged public var category: String
+  @NSManaged public var placemark: CLPlacemark?
+  @NSManaged public var photoID: NSNumber?
 }
 
-extension Location: Identifiable {}
+extension Location : Identifiable {
+  
+}

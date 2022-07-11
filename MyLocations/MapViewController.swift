@@ -89,12 +89,15 @@ class MapViewController: UIViewController {
         longitude: -180)
 
       for annotation in annotations {
-        topLeft.latitude = max(topLeft.latitude,
-                               annotation.coordinate.latitude)
-        topLeft.longitude = min(topLeft.longitude,
-                                annotation.coordinate.longitude)
-        bottomRight.latitude = min(bottomRight.latitude,
-                                   annotation.coordinate.latitude)
+        topLeft.latitude = max(
+          topLeft.latitude,
+          annotation.coordinate.latitude)
+        topLeft.longitude = min(
+          topLeft.longitude,
+          annotation.coordinate.longitude)
+        bottomRight.latitude = min(
+          bottomRight.latitude,
+          annotation.coordinate.latitude)
         bottomRight.longitude = max(
           bottomRight.longitude,
           annotation.coordinate.longitude)
